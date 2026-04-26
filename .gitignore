@@ -1,0 +1,33 @@
+# Root GitIgnore for PhotoToPoetry
+
+# IDE & OS
+.idea/
+.vscode/
+.DS_Store
+*.iml
+*.ipr
+*.iws
+
+# Python / Backend
+Photo2PoetryBE/__pycache__/
+Photo2PoetryBE/.env
+Photo2PoetryBE/venv/
+Photo2PoetryBE/.pytest_cache/
+*.pyc
+
+# Flutter / Frontend
+Photo2PoetryFE/.env
+Photo2PoetryFE/.dart_tool/
+Photo2PoetryFE/.flutter-plugins
+Photo2PoetryFE/.flutter-plugins-dependencies
+Photo2PoetryFE/.pub-cache/
+Photo2PoetryFE/.pub/
+Photo2PoetryFE/build/
+Photo2PoetryFE/android/app/debug/
+Photo2PoetryFE/android/app/profile/
+Photo2PoetryFE/android/app/release/
+
+# Miscellaneous
+*.log
+*.swp
+.history
