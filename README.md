@@ -1,7 +1,7 @@
 # PhotoToPoetry 📸✍️
 ### *Dissolving Moments into Verses*
 
-PhotoToPoetry is a premium mobile experience that transforms your photographs into evocative, heartfelt poetry using state-of-the-art AI. By "Reading the light" and "Feeling the colours," the app captures the soul of an image and weaves it into unique verses.
+PhotoToPoetry is a android app that transforms your photographs into evocative, heartfelt poetry using state-of-the-art AI. By "Reading the light" and "Feeling the colours," the app captures the soul of an image and weaves it into unique verses.
 
 ---
 
@@ -29,7 +29,7 @@ The repository is organized into a clean split-architecture:
 ### 1. Backend Setup
 1. Navigate to `Photo2PoetryBE`.
 2. Install dependencies: `pip install -r requirements.txt`.
-3. Create a `.env` file with your `GEMINI_API_KEY` and `OPENROUTER_API_KEY`.
+3. Create a `.env` file with your `GEMINI_API_KEY` and `GEMINI_API_KEY_SECONDARY`.
 4. Run the server: `python main.py` or deploy to Hugging Face Spaces.
 
 ### 2. Frontend Setup
@@ -37,23 +37,6 @@ The repository is organized into a clean split-architecture:
 2. Install Flutter dependencies: `flutter pub get`.
 3. Create a `.env` file based on `.env.example` and set your `API_URL`.
 4. Run the app: `flutter run`.
-
----
-
-## 🛡️ Security & Open Source
-This project is prepared for open-source contribution. All sensitive endpoints and keys are abstracted into environment variables. 
-
-> [!NOTE]
-> For production deployment, ensure your CORS settings in `app.py` and your rate-limiting windows are configured to your expected traffic.
-
----
-
-## 🎨 Design Philosophy
-PhotoToPoetry follows a **"Poetic Dark"** design system:
-- **Ink (#0E0C14)**: Deep midnight backgrounds.
-- **Parchment (#F5E6C8)**: Warm, legible cream tones.
-- **Aged Gold (#D4A843)**: Premium accents for primary actions.
-- **Dusty Rose (#C4647A)**: Subtle highlights for creative touches.
 
 ---
 
