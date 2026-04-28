@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:http_parser/http_parser.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -10,8 +11,8 @@ class PoemApiService {
   // Fetched from .env during runtime. Throws if missing.
   static String get apiUrl => dotenv.get('API_URL');
 
-  static int? remainingRequests;
-  static int? resetAt;
+  static final ValueNotifier<int?> remainingRequests = ValueNotifier<int?>(null);
+  static final ValueNotifier<int?> resetAt = ValueNotifier<int?>(null);
 
   static Future<PoemResponse> generatePoem(
     String imagePath,
@@ -51,11 +52,11 @@ class PoemApiService {
 
       if (remainingHeader != null) {
         remaining = int.tryParse(remainingHeader);
-        remainingRequests = remaining;
+        remainingRequests.value = remaining;
       }
       if (resetHeader != null) {
         reset = int.tryParse(resetHeader);
-        resetAt = reset;
+        resetAt.value = reset;
       }
 
       if (response.statusCode == 200 || response.statusCode == 201) {

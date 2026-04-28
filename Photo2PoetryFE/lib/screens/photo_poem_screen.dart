@@ -22,7 +22,7 @@ class _PhotoPoemScreenState extends State<PhotoPoemScreen>
   final ImagePicker _picker = ImagePicker();
 
   int _poemLength = 30;
-  String _userTheme = "Mystical";
+  String _userTheme = "Hope";
 
   late AnimationController _fadeController;
   late Animation<double> _fadeIn;
@@ -43,7 +43,7 @@ class _PhotoPoemScreenState extends State<PhotoPoemScreen>
     final prefs = await SharedPreferences.getInstance();
     setState(() {
       _poemLength = prefs.getInt('poemLength') ?? 30;
-      _userTheme = prefs.getString('userTheme') ?? "Mystery";
+      _userTheme = prefs.getString('userTheme') ?? "Hope";
     });
   }
 
@@ -189,10 +189,11 @@ class _PhotoPoemScreenState extends State<PhotoPoemScreen>
                   const Spacer(),
 
                   // --- Generations Left Indicator (Centered above buttons) ---
-                  Builder(
-                    builder: (context) {
-                      final remaining = PoemApiService.remainingRequests ?? 5;
-                      final resetAt = PoemApiService.resetAt;
+                  ValueListenableBuilder<int?>(
+                    valueListenable: PoemApiService.remainingRequests,
+                    builder: (context, remainingValue, _) {
+                      final remaining = remainingValue ?? 5;
+                      final resetAt = PoemApiService.resetAt.value;
 
                       String resetText = "LIMIT: 5 / 15 MINS";
                       if (resetAt != null) {

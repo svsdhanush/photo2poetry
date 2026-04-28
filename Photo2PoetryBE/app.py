@@ -35,12 +35,13 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["X-RateLimit-Remaining", "X-RateLimit-Reset"],
 )
 
 # --- Configuration ---
 GEMINI_API_KEY_PRIMARY = os.getenv("GEMINI_API_KEY")
 GEMINI_API_KEY_SECONDARY = os.getenv("GEMINI_API_KEY_SECONDARY")
-MODEL = os.getenv("GEMINI_MODEL", "gemini-1.5-flash-lite")
+MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 API_TIMEOUT = int(os.getenv("API_TIMEOUT", "30"))
 
 
