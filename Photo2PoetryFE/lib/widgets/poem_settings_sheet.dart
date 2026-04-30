@@ -31,11 +31,10 @@ class _PoemSettingsSheetState extends State<PoemSettingsSheet> {
   final List<String> _suggestedThemes = [
     "Love",
     "Mystery",
-    "Nature",
     "Hope",
     "Solitude",
     "Joy",
-    "Longing",
+    "Hopeless Romantic",
   ];
 
   @override
